@@ -1,3 +1,5 @@
+'use strict';
+
 const hamburger = document.querySelector('.nav__hamburger');
 const nav = document.querySelector('.nav__list');
 const navItem = document.querySelectorAll('.nav__item');
@@ -17,7 +19,6 @@ function hamburgerAction(e) {
 
 const header = document.querySelector('.header');
 const navHeight = mainNav.getBoundingClientRect().height;
-
 const stickyNav = function (entries) {
   const [entry] = entries;
   if (!entry.isIntersecting) mainNav.classList.add('nav__fixed');
@@ -30,6 +31,5 @@ const headerObserver = new IntersectionObserver(stickyNav, {
   root: null,
   threshold: 0,
   rootMargin: `-${navHeight}px`,
-  // 90 is the height of the nav
 });
 headerObserver.observe(header);
