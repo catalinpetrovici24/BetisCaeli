@@ -1,0 +1,51 @@
+@use "../abstracts" as *;
+
+.header {
+    &__hero {
+        height: 100vh;
+        background-image: url(../../assets/images/header_background_1920x1080.jpg);
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: 67% 50%;
+    }
+
+    &__nav {
+        height: 6rem;
+        padding-left: 2rem;
+        padding-right: min(6vw, 8rem);
+        background-color: rgba(#000, 0.2);
+        background-color: rgba(#fff, 0.04);
+
+        @supports (backdrop-filter: blur(0.5rem)) {
+            background-color: rgba(#fff, 0.07);
+            backdrop-filter: blur(0.5rem);
+        }
+
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        @include respond(small) {
+        }
+    }
+
+    &__context {
+        width: 100%;
+        height: 80%;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    &__span {
+        display: block;
+    }
+}
+
+.nav__fixed {
+    position: fixed;
+    top: 0;
+    width: 100%;
+}

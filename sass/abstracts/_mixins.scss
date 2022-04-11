@@ -1,0 +1,60 @@
+@use "./variables" as *;
+
+// Media query manager
+/*
+@ORDER : Base + typography > general layout + grid > page layout > components
+
+1em = 16px
+
+0 - 600px:        Phone
+600 - 900px:      Tablet portrait
+900 - 1200px:     Tablet landscape
+[1200 - 1800] is where our normal styles apply
+1800px + :        Big desktop
+
+@mixin respond-phone {
+    @media (max-width: 600px) {
+        @content;
+    }
+}
+*/
+
+@mixin respond($breakpoint) {
+    @if $breakpoint == smallest {
+        @media only screen and (max-width: $bp-smallest) {
+            // 600px
+            @content;
+        }
+    }
+    @if $breakpoint == small {
+        @media only screen and (max-width: $bp-small) {
+            //900px
+            @content;
+        }
+    }
+    @if $breakpoint == medium {
+        @media only screen and (max-width: $bp-medium) {
+            //120px
+            @content;
+        }
+    }
+    @if $breakpoint == large {
+        @media only screen and (min-width: $bp-large) {
+            //1800px
+            @content;
+        }
+    }
+    @if $breakpoint == largest {
+        @media only screen and (min-width: $bp-largest) {
+            //1800px
+            @content;
+        }
+    }
+}
+
+@mixin absCenter {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}

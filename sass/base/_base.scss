@@ -1,0 +1,45 @@
+@use "../abstracts/mixins" as *;
+@use "../abstracts/variables" as *;
+
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+html {
+    scroll-behavior: smooth;
+    // This defines what 1rem is
+    font-size: 62.5%;
+
+    @include respond(largest) {
+        // font-size: 75%; // 1 rem = 12px, 12/16 = 50%
+    }
+
+    @include respond(large) {
+        // font-size: 56.25%; // 1 rem = 9px, 9/16 = 50%
+    }
+
+    @include respond(medium) {
+        // font-size: 50%; // 1 rem = 8px, 8/16 = 50%
+    }
+
+    @include respond(smallest) {
+        // font-size: 50%;
+    }
+}
+
+body {
+    box-sizing: border-box;
+}
+
+img {
+    width: 100%;
+}
+
+// ::selection {
+//     background-color: ;
+//     color: ;
+// }
