@@ -1,16 +1,16 @@
 {
-  "name": "project",
+  "name": "caerspace",
   "version": "1.0.0",
-  "description": "SASS compile|autoprefix|minimize and live-reload dev server using live-server for static HTML",
+  "description": "Personal website Betis Caeli",
   "main": "index.html",
   "author": "catalinpetrovici24",
   "scripts": {
     "watch": "sass --no-source-map --watch sass/main.scss styles/style.css --style compressed",
     "dev-server": "live-server",
-    "compile": "sass --no-source-map --style=compressed sass/main.scss css/style.comp.css",
-    "concat:css": "concat -o css/style.concat.css css/icon-font.css css/style.comp.css",
-    "prefix": "postcss css/style.comp.css --use autoprefixer -o css/style.css",
-    "clean": "shx rm css/style.comp.css && shx echo Done",
+    "compile": "sass --no-source-map --style=compressed sass/main.scss styles/style.comp.css",
+    "concat:css": "concat -o styles/style.concat.css styles/icon-font.css styles/style.comp.css",
+    "prefix": "postcss --no-map styles/style.comp.css --use autoprefixer -o styles/style.css",
+    "clean": "shx rm styles/style.comp.css && shx echo Done",
     "": "",
     "build": "npm-run-all compile prefix clean",
     "start": "npm-run-all --parallel watch dev-server"
